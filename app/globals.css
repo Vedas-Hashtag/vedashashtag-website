@@ -2,20 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: var(--font-geist-sans), Helvetica, sans-serif;
 }
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 220 20% 98%;
+    --primary-background: 239 69% 72%;
+    --foreground: 220 15% 10%;
+    --card: 220 20% 100%;
+    --card-foreground: 220 15% 10%;
+    --popover: 220 20% 100%;
+    --popover-foreground: 220 15% 10%;
+    --primary: 239 69% 72%; /* Bright neon blue */
+    --primary-foreground: 0 0% 100%; /* White for contrast */
+    --secondary: 220 15% 85%;
+    --secondary-foreground: 220 15% 10%;
+    --muted: 220 15% 90%;
+    --muted-foreground: 220 10% 30%;
+    --accent: 180 80% 50%; /* Vibrant teal */
+    --accent-foreground: 0 0% 100%; /* White for contrast */
+    --destructive: 0 70% 50%; /* Bold red */
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 220 80% 50%; /* Neon blue */
+    --chart-1: 220 90% 56%; /* Neon blue */
+    --chart-2: 180 80% 50%; /* Teal */
+    --chart-3: 300 50% 45%; /* Purple */
+    --chart-4: 45 85% 65%; /* Yellow for contrast */
+    --chart-5: 0 70% 50%; /* Red */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 220 15% 10%;
+    --foreground: 220 20% 95%;
+    --card: 220 15% 15%;
+    --card-foreground: 220 20% 95%;
+    --popover: 220 15% 15%;
+    --popover-foreground: 220 20% 95%;
+    --primary: 220 90% 56%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 10% 25%;
+    --secondary-foreground: 220 20% 95%;
+    --muted: 220 10% 20%;
+    --muted-foreground: 220 20% 70%;
+    --accent: 180 80% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 65% 45%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 220 80% 50%;
+    --chart-1: 220 90% 56%;
+    --chart-2: 180 80% 50%;
+    --chart-3: 300 50% 45%;
+    --chart-4: 45 85% 65%;
+    --chart-5: 0 70% 50%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
