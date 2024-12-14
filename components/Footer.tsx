@@ -13,7 +13,7 @@ const Footer: FC<FooterProps> = ({}) => {
       <MaxWidthWrapper>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-accent-foreground">
           {/* Logo and Social Media */}
-          <div className="flex flex-col  mr-auto space-y-4 md:space-y-0 w-full items-start justify-start">
+          <div className="flex flex-col  mr-auto space-y-4 md:space-y-0 w-full md:items-start items-center lg:justify-start ">
             <div className="relative h-[10rem] aspect-square grid place-items-center">
               <Image
                 src="/logo.png"
@@ -23,7 +23,7 @@ const Footer: FC<FooterProps> = ({}) => {
                 className="object-cover object-center"
               />
             </div>
-            <div className="flex space-x-4 w-full">
+            <div className="flex space-x-4 w-full items-center justify-center md:justify-start">
               <a
                 href="https://facebook.com"
                 aria-label="Facebook"
