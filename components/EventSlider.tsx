@@ -21,6 +21,8 @@ const EventSlider: FC<EventSliderProps> = ({}) => {
   if (width) {
     if (width <= 1028) {
       numbersOfSlides = 1;
+    } else {
+      numbersOfSlides = 3;
     }
   }
 
@@ -42,10 +44,11 @@ const EventSlider: FC<EventSliderProps> = ({}) => {
             alt={val.title}
             height={300}
             width={400}
-            className="object-cover absolute inset-0 brightness-75 object-center z-0"
+            className="object-cover absolute inset-0 brightness-50 object-center z-0"
           />
           {/* Explore Button */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center z-10">
+            <h1 className="text-white font-bold drop-shadow-lg">{val.title}</h1>
             <Button
               onClick={() =>
                 setActiveSlide((prev) => (prev === index ? null : index))
