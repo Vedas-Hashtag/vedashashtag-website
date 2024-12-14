@@ -1,7 +1,6 @@
 import AboutUs from "@/components/AboutSection";
 import EffortSection from "@/components/EffortSection";
 import Events from "@/components/Events";
-import Footer from "@/components/Footer";
 import GallerySection from "@/components/GallerySection";
 import HackthonHype from "@/components/HackthonHype";
 import HeroSection from "@/components/HeroSection";
@@ -18,7 +17,6 @@ export default function Home() {
       <Events />
       <HackthonHype />
       <GallerySection />
-      <Footer />
     </main>
   );
 }

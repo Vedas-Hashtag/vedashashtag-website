@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Sheet,
   SheetContent,
@@ -13,14 +13,17 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 const MobileNavbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClose = () => setIsOpen(false);
+
   return (
-    <Sheet>
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger>
         <HiMenu className="text-4xl" />
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
-          {/* <SheetTitle>Are you absolutely sure?</SheetTitle> */}
           <SheetDescription>
             <ul className="flex items-center gap-4 font-medium text-accent-background flex-col">
               {ids.map((link) => (
@@ -31,6 +34,7 @@ const MobileNavbar = () => {
                       buttonVariants({ variant: "ghost" }),
                       "scroll-smooth"
                     )}
+                    onClick={handleClose} // Close the sheet on click
                   >
                     {link.name}
                   </Link>
@@ -44,6 +48,7 @@ const MobileNavbar = () => {
                       buttonVariants({ variant: "ghost" }),
                       "scroll-smooth"
                     )}
+                    onClick={handleClose} // Close the sheet on click
                   >
                     {link.name}
                   </Link>

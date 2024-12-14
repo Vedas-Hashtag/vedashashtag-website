@@ -4,12 +4,13 @@ import { FC } from "react";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import Image from "next/image";
 import { FaFacebook, FaInstagram } from "react-icons/fa6";
+import { ids } from "@/app/data/navLinks";
 
 interface FooterProps {}
 
 const Footer: FC<FooterProps> = ({}) => {
   return (
-    <section title="footer" className="bg-primary py-10">
+    <section id="footer" className="bg-primary py-10 relative bottom-0 left-0">
       <MaxWidthWrapper>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-accent-foreground">
           {/* Logo and Social Media */}
@@ -49,30 +50,16 @@ const Footer: FC<FooterProps> = ({}) => {
           <div className="text-center md:text-left space-y-4">
             <h3 className="font-bold text-lg">Quick Links</h3>
             <ul className="space-y-2">
-              <li>
-                <a
-                  href="#about"
-                  className="hover:text-secondary transition-colors"
-                >
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#services"
-                  className="hover:text-secondary transition-colors"
-                >
-                  Events
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  className="hover:text-secondary transition-colors"
-                >
-                  Efforts
-                </a>
-              </li>
+              {ids.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="hover:text-secondary transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
