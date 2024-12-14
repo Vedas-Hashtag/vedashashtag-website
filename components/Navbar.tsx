@@ -1,10 +1,14 @@
+/* eslint-disable @typescript-eslint/no-empty-object-type */
 "use client";
 import Image from "next/image";
 import { FC, useEffect, useState } from "react";
-import { HiMenu } from "react-icons/hi";
+
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
+import { cn } from "@/lib/utils";
+import { ids, links } from "@/app/data/navLinks";
+import MobileNavbar from "./MobileNavbar";
 interface NavbarProps {}
 
 const Navbar: FC<NavbarProps> = ({}) => {
@@ -29,25 +33,6 @@ const Navbar: FC<NavbarProps> = ({}) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  const links = [
-    {
-      name: "About",
-      href: "/about",
-    },
-    {
-      name: "Events",
-      href: "/events",
-    },
-    {
-      name: "Become a member",
-      href: "/membership",
-    },
-    {
-      name: "Contact",
-      href: "/contact",
-    },
-  ];
 
   return (
     <nav
@@ -74,16 +59,32 @@ const Navbar: FC<NavbarProps> = ({}) => {
               />
             </Link>
           </div>
-          <div className="aspect-square h-full md:hidden flex">
-            <HiMenu className="text-4xl" />
+          <div className="aspect-square h-full lg:hidden flex">
+            <MobileNavbar />
           </div>
-          <div className="hidden md:flex">
+          <div className="hidden lg:flex">
             <ul className="flex items-center gap-4 font-medium text-accent-background">
+              {ids.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className={cn(
+                      buttonVariants({ variant: "ghost" }),
+                      "scroll-smooth"
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
               {links.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className={buttonVariants({ variant: "ghost" })}
+                    className={cn(
+                      buttonVariants({ variant: "ghost" }),
+                      "scroll-smooth"
+                    )}
                   >
                     {link.name}
                   </Link>

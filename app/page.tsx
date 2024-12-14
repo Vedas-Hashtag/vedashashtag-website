@@ -1,6 +1,11 @@
 import AboutUs from "@/components/AboutSection";
+import EffortSection from "@/components/EffortSection";
+import Events from "@/components/Events";
+import Footer from "@/components/Footer";
+import GallerySection from "@/components/GallerySection";
+import HackthonHype from "@/components/HackthonHype";
 import HeroSection from "@/components/HeroSection";
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+
 import VideoIntroduction from "@/components/VideoIntroduction";
 
 export default function Home() {
@@ -9,6 +14,11 @@ export default function Home() {
       <HeroSection />
       <VideoIntroduction />
       <AboutUs />
+      <EffortSection />
+      <Events />
+      <HackthonHype />
+      <GallerySection />
+      <Footer />
     </main>
   );
 }
