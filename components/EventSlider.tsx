@@ -1,7 +1,7 @@
 "use client";
 /* eslint-disable @typescript-eslint/no-empty-object-type */
 
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
@@ -14,11 +14,12 @@ import { Button } from "./ui/button";
 interface EventSliderProps {}
 
 const EventSlider: FC<EventSliderProps> = ({}) => {
+  const width = useWidth();
   const [activeSlide, setActiveSlide] = useState<number | null>(null); // Active slide state
 
   let numbersOfSlides = 3;
-  if (window) {
-    if (window.innerWidth <= 1028) {
+  if (width) {
+    if (width <= 1028) {
       numbersOfSlides = 1;
     }
   }
@@ -82,3 +83,15 @@ const EventSlider: FC<EventSliderProps> = ({}) => {
 };
 
 export default EventSlider;
+
+const useWidth = () => {
+  const [width, setWidth] = useState(0);
+  const handleResize = () => setWidth(window.innerWidth);
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  return width;
+};
