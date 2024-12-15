@@ -12,10 +12,9 @@ const VideoIntroduction: FC<VideoIntroductionProps> = ({}) => {
       <div className="absolute -top-10 md:-top-20 w-full aspect-video">
         <ReactPlayer
           className="react-player"
-          url="https://www.youtube.com/watch?v=WlfXDBu6AOg&list=RDWlfXDBu6AOg&start_radio=1"
+          url="https://www.youtube.com/watch?v=UvqdUkqK5g0"
           width="100%"
           height="100%"
-          controls
         />
       </div>
     </div>
