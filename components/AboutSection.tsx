@@ -39,21 +39,21 @@ const AboutUs: FC<AboutUsProps> = ({}) => {
             alt="ring-background"
             width={500}
             height={500}
-            className="h-[14rem] object-contain left-0 top-0 absolute opacity-50"
+            className="h-[14rem] object-contain left-0 top-0 absolute opacity-50 invert"
           />
           <Image
             src="/Oval2.png"
             alt="ring-background"
             width={500}
             height={500}
-            className="h-[7rem] object-contain left-[30%] top-[50%] absolute opacity-70 "
+            className="h-[7rem] object-contain left-[30%] top-[50%] absolute opacity-70 invert"
           />
           <Image
             src="/Oval3.png"
             alt="ring-background"
             width={500}
             height={500}
-            className="h-[17rem] object-contain right-[0%] top-[50%] absolute opacity-70 "
+            className="h-[17rem] object-contain right-[0%] top-[50%] absolute opacity-50 invert"
           />
         </div>
       </MaxWidthWrapper>

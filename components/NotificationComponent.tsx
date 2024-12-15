@@ -9,17 +9,17 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import {
-  //   IoBulbOutline,
+  IoBulbOutline,
   IoNotifications,
-  //   IoBulb,
-  //   IoSettingsOutline,
+  IoBulb,
+  IoSettingsOutline,
 } from "react-icons/io5";
 import { notifications as initialNotifications } from "@/app/data/notification";
 import { Button } from "./ui/button";
-// import { useTheme } from "next-themes";
+import { useTheme } from "next-themes";
 
 const NotificationComponent = () => {
-  //   const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   const [unseenNotifications, setUnseenNotifications] =
     React.useState(initialNotifications);
@@ -57,10 +57,10 @@ const NotificationComponent = () => {
           <DropdownMenuItem className="w-full px-8" key={notification.id}>
             <div className="flex items-center space-x-4">
               <div className="flex-1 min-w-0">
-                <h1 className="text-sm font-medium text-gray-900 truncate">
+                <h1 className="text-sm font-medium text-primary-background truncate">
                   {notification.title}
                 </h1>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-accent-foreground">
                   {notification.description}
                 </p>
                 <a
@@ -86,33 +86,47 @@ const NotificationComponent = () => {
             </DropdownMenuItem>
           </>
         )}
-        {/* <DropdownMenuSeparator className="w-full h-[2px]" />
+        <DropdownMenuSeparator className="w-full h-[2px]" />
         <DropdownMenuItem className="w-full px-8 focus:bg-background">
           <div className="w-full flex justify-evenly space-x-2">
             <Button
               variant={"outline"}
-              className="flex-auto"
+              className={`flex-auto ${
+                theme === "light" ? "bg-primary text-primary-foreground" : ""
+              }`}
               onClick={() => setTheme("light")}
+              title="Light Mode Toggle"
+              aria-label="Light Mode Toggle"
             >
               <IoBulbOutline />
-              Light
+              <p className="hidden md:flex">Light</p>
             </Button>
             <Button
               variant={"outline"}
-              className="flex-auto"
+              className={`flex-auto ${
+                theme === "dark" ? "bg-primary text-primary-foreground" : ""
+              }`}
               onClick={() => setTheme("dark")}
+              title="Dark Mode Toggle"
+              aria-label="Dark Mode Toggle"
             >
-              <IoBulb className="text-black" /> Dark
+              <IoBulb className="text-foreground dark:drop-shadow-lg drop-shadow-white" />{" "}
+              <p className="hidden md:flex">Dark</p>
             </Button>
             <Button
               variant={"outline"}
-              className="flex-auto"
+              className={`flex-auto ${
+                theme === "system" ? "bg-primary text-primary-foreground" : ""
+              }`}
               onClick={() => setTheme("system")}
+              title="System Mode Toggle"
+              aria-label="System Mode Toggle"
             >
-              <IoSettingsOutline /> System
+              <IoSettingsOutline />
+              <p className="hidden md:flex">System</p>
             </Button>
           </div>
-        </DropdownMenuItem> */}
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

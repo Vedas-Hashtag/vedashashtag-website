@@ -40,7 +40,7 @@ const HeroSection: FC<HeroSectionProps> = ({}) => {
           <div className="flex flex-col items-center justify-center w-full md:w-1/2">
             <h1 className="text-5xl font-bold lg:text-7xl drop-shadow-lg">
               Dive into the <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-destructive">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-red-600">
                 Vedas Experience
               </span>
             </h1>
@@ -57,8 +57,8 @@ const HeroSection: FC<HeroSectionProps> = ({}) => {
 
           {/* Right Content */}
           <div className="flex relative justify-center md:w-1/2 w-full">
-            <div className="z-10 relative lg:w-[21rem] w-[14rem] aspect-square border-4 border-accent rounded-full grid place-items-center">
-              <div className="rounded-full border-4 border-accent aspect-square flex justify-center items-center bg-background lg:h-[17rem] h-[10rem] my-8">
+            <div className="z-10 relative lg:w-[21rem] w-[14rem] aspect-square border-4 border-white rounded-full grid place-items-center">
+              <div className="rounded-full border-4 border-white aspect-square flex justify-center items-center bg-white lg:h-[17rem] h-[10rem] my-8">
                 <Image
                   src="/logo.png"
                   alt="Vedas Hashtag"

@@ -39,10 +39,10 @@ const Navbar: FC<NavbarProps> = ({}) => {
 
   return (
     <nav
-      className={`border-gray-200 min-w-screen   top-0 z-50 relative w-full ${
+      className={`border-border min-w-screen   top-0 z-50 relative w-full ${
         scrolled
-          ? "bg-white/70 backdrop-blur-lg shadow-md sticky border-b"
-          : "bg-white "
+          ? "bg-background/70 backdrop-blur-lg shadow-md sticky border-b"
+          : "bg-background"
       }`}
       id="navbar"
     >
@@ -58,7 +58,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
                 alt="logo"
                 width={100}
                 height={100}
-                className=" "
+                className="bg-white rounded-full"
               />
             </Link>
           </div>

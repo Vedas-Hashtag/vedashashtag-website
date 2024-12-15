@@ -41,7 +41,7 @@ const Events: FC<EventsProps> = ({}) => {
           alt="Square Matrix"
           width={500}
           height={500}
-          className=" object-contain "
+          className=" object-contain dark:invert "
         />
       </div>
     </section>
