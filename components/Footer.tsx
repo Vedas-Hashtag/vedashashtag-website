@@ -13,7 +13,7 @@ const Footer: FC<FooterProps> = ({}) => {
   return (
     <section
       id="footer"
-      className="bg-primary py-10 relative   w-screen bottom-0 left-0"
+      className="bg-primary py-10 relative   bottom-0 left-0"
     >
       <MaxWidthWrapper>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-accent-foreground">

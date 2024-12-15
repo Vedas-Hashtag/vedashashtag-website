@@ -9,6 +9,9 @@ import { buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { links } from "@/app/data/links";
 import MobileNavbar from "./MobileNavbar";
+import { Separator } from "./ui/separator";
+
+import NotificationComponent from "./NotificationComponent";
 interface NavbarProps {}
 
 const Navbar: FC<NavbarProps> = ({}) => {
@@ -59,27 +62,37 @@ const Navbar: FC<NavbarProps> = ({}) => {
               />
             </Link>
           </div>
-          <div className="aspect-square h-full lg:hidden flex">
-            <MobileNavbar />
+          <div className="flex justify-end w-full items-end">
+            <div className="aspect-square h-full lg:hidden flex ">
+              <MobileNavbar />
+            </div>
+            <div className="hidden lg:flex">
+              <ul className="flex items-center gap-4 font-medium text-accent-background flex-1">
+                {links.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className={cn(
+                        buttonVariants({ variant: "ghost" }),
+                        "scroll-smooth"
+                      )}
+                      title={link.name}
+                      aria-label={link.name}
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <div className="hidden lg:flex">
-            <ul className="flex items-center gap-4 font-medium text-accent-background">
-              {links.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className={cn(
-                      buttonVariants({ variant: "ghost" }),
-                      "scroll-smooth"
-                    )}
-                    title={link.name}
-                    aria-label={link.name}
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          <div className="flex flex-row h-full w-fit ml-2 items-center justify-center">
+            <Separator
+              className="text-4xl text-primary h-[2rem] mr-2"
+              orientation="vertical"
+            />
+
+            <NotificationComponent />
           </div>
         </div>
       </MaxWidthWrapper>
