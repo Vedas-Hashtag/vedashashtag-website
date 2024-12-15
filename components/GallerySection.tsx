@@ -34,8 +34,8 @@ const GallerySection: FC<GallerySectionProps> = ({}) => {
                 className="relative overflow-hidden rounded-md shadow-md group"
               >
                 <Image
-                  src={image.src}
-                  alt={image.alt}
+                  src={image?.src}
+                  alt={image?.alt}
                   layout="responsive"
                   width={400}
                   height={300}

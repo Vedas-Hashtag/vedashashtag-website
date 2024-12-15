@@ -7,5 +7,5 @@ export const galleryImages = [
   // { src: "/images/gallery5.JPG", alt: "fdsaf", aspect_ratio: 4 / 3 },
   // { src: "/images/gallery6.JPG", alt: "fdsaf", aspect_ratio: 4 / 3 },
   // Add more images as needed
-  { src: null, alt: "" },
+  { src: "/images/gallery1.webp", alt: "Vedas Hackathon" },
 ];
