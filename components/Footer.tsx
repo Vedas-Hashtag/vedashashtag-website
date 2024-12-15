@@ -4,7 +4,8 @@ import { FC } from "react";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import Image from "next/image";
 import { FaFacebook, FaInstagram } from "react-icons/fa6";
-import { ids } from "@/app/data/navLinks";
+import { ids, socialLinks, specialEvents } from "@/app/data/links";
+import Link from "next/link";
 
 interface FooterProps {}
 
@@ -25,42 +26,57 @@ const Footer: FC<FooterProps> = ({}) => {
               />
             </div>
             <div className="flex space-x-4 w-full items-center justify-center md:justify-start">
-              <a
-                href="https://facebook.com"
-                aria-label="Facebook"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-secondary transition-colors"
-              >
-                <FaFacebook size={24} />
-              </a>
-              <a
-                href="https://instagram.com"
-                aria-label="Instagram"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-secondary transition-colors"
-              >
-                <FaInstagram size={24} />
-              </a>
+              {socialLinks.map((social) => (
+                <Link
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-secondary transition-colors"
+                >
+                  <span className="sr-only">{social.name}</span>
+                  {typeof social.Icon === "function" ? (
+                    <social.Icon size={24} />
+                  ) : (
+                    social.Icon
+                  )}
+                </Link>
+              ))}
             </div>
           </div>
 
           {/* Quick Links */}
-          <div className="text-center md:text-left space-y-4">
-            <h3 className="font-bold text-lg">Quick Links</h3>
-            <ul className="space-y-2">
-              {ids.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="hover:text-secondary transition-colors"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
+            <div className="text-center md:text-left space-y-4">
+              <h3 className="font-bold text-lg">Quick Links</h3>
+              <ul className="space-y-2">
+                {ids.map((link) => (
+                  <li key={link.name}>
+                    <a
+                      href={link.href}
+                      className="hover:text-secondary transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="text-center md:text-left space-y-4">
+              <h3 className="font-bold text-lg">Discord Servers!</h3>
+              <ul className="space-y-2">
+                {specialEvents.map((link) => (
+                  <li key={link.name}>
+                    <a
+                      href={link.href}
+                      className="hover:text-secondary transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Contact Information */}

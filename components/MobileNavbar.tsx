@@ -7,7 +7,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { HiMenu } from "react-icons/hi";
-import { ids, links } from "@/app/data/navLinks";
+import { ids, links } from "@/app/data/links";
 import { buttonVariants } from "./ui/button";
 import Link from "next/link";
 import { cn } from "@/lib/utils";

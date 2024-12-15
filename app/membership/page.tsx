@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <>
-      <main className=" min-w-screen">
+      <section className=" min-w-screen">
         <Membership />
-      </main>
+      </section>
     </>
   );
 };
