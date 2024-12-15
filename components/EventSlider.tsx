@@ -40,15 +40,17 @@ const EventSlider: FC<EventSliderProps> = ({}) => {
         <SwiperSlide key={index} className="relative">
           {/* Slide Image */}
           <Image
-            src={val.image}
+            src={val.image || "/logo.png"}
             alt={val.title}
             height={300}
             width={400}
-            className="object-cover absolute inset-0 brightness-50 object-center z-0"
+            className="object-cover absolute inset-0 brightness-50 object-center z-0 blur-[2px] bg-black"
           />
           {/* Explore Button */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center z-10">
-            <h1 className="text-white font-bold drop-shadow-lg">{val.title}</h1>
+            <h1 className="text-white font-bold drop-shadow-3xl">
+              {val.title}
+            </h1>
             <Button
               onClick={() =>
                 setActiveSlide((prev) => (prev === index ? null : index))

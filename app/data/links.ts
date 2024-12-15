@@ -9,12 +9,32 @@ export const ids = [
     name: "Events",
     href: "/#events",
   },
+  {
+    name: "Gallery",
+    href: "/#gallery",
+  },
+  {
+    name: "Membership",
+    href: "/#membership",
+  },
+  // {
+  //   name: "Contact",
+  //   href: "/#contact",
+  // },
   // {
   //   name: "Efforts",
   //   href: "/#efforts",
   // },
 ];
 export const links = [
+  {
+    name: "Home",
+    href: "/#",
+  },
+  {
+    name: "Events",
+    href: "/events",
+  },
   {
     name: "Gallery",
     href: "/gallery",

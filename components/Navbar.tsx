@@ -7,7 +7,7 @@ import MaxWidthWrapper from "./MaxWidthWrapper";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
-import { ids, links } from "@/app/data/links";
+import { links } from "@/app/data/links";
 import MobileNavbar from "./MobileNavbar";
 interface NavbarProps {}
 
@@ -49,7 +49,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
       <MaxWidthWrapper className="py-3 z-2 relative">
         <div className="flex items-center justify-between">
           <div className="w-[90px]">
-            <Link href="/">
+            <Link href="/" title="Home" aria-label="Home">
               <Image
                 src={"/logo.png"}
                 alt="logo"
@@ -64,19 +64,6 @@ const Navbar: FC<NavbarProps> = ({}) => {
           </div>
           <div className="hidden lg:flex">
             <ul className="flex items-center gap-4 font-medium text-accent-background">
-              {ids.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className={cn(
-                      buttonVariants({ variant: "ghost" }),
-                      "scroll-smooth"
-                    )}
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
               {links.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -85,6 +72,8 @@ const Navbar: FC<NavbarProps> = ({}) => {
                       buttonVariants({ variant: "ghost" }),
                       "scroll-smooth"
                     )}
+                    title={link.name}
+                    aria-label={link.name}
                   >
                     {link.name}
                   </Link>

@@ -2,7 +2,7 @@ export const events = [
   {
     title: "Vedas Hackathon 2081",
     description: "To be included later.",
-    image: "/events/1.png",
+    image: "/events/1.webp",
 
     link: "/",
   },
@@ -15,13 +15,13 @@ export const events = [
   {
     title: "Holi 2081",
     description: "TBD",
-    image: "/events/3.png",
+    image: "/events/3.webp",
     link: "/",
   },
   {
     title: "Open Source and Linux Introductory Session",
     description: "TBD",
-    image: "/events/3.png",
+    image: null,
     link: "/",
   },
 ];

@@ -7,7 +7,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { HiMenu } from "react-icons/hi";
-import { ids, links } from "@/app/data/links";
+import { links } from "@/app/data/links";
 import { buttonVariants } from "./ui/button";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -26,20 +26,6 @@ const MobileNavbar = () => {
         <SheetHeader>
           <SheetDescription>
             <ul className="flex items-center gap-4 font-medium text-accent-background flex-col">
-              {ids.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className={cn(
-                      buttonVariants({ variant: "ghost" }),
-                      "scroll-smooth"
-                    )}
-                    onClick={handleClose} // Close the sheet on click
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
               {links.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -49,6 +35,8 @@ const MobileNavbar = () => {
                       "scroll-smooth"
                     )}
                     onClick={handleClose} // Close the sheet on click
+                    title={link.name}
+                    aria-label={link.name}
                   >
                     {link.name}
                   </Link>
