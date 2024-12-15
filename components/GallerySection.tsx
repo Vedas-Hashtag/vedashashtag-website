@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/no-empty-object-type */
 "use client";
 
-import { FC } from "react";
+import { FC, Suspense } from "react";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Image from "next/image";
 import { galleryImages } from "@/app/data/galleryImages";
 import Link from "next/link";
+import GallerySkeleton from "./GallerySkeleton";
 interface GallerySectionProps {}
 
 const GallerySection: FC<GallerySectionProps> = ({}) => {
@@ -25,33 +26,36 @@ const GallerySection: FC<GallerySectionProps> = ({}) => {
           </Link>{" "}
           to see more.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {galleryImages.map((image, index) => (
-            <div
-              key={index}
-              className="relative overflow-hidden rounded-md shadow-md group"
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                layout="responsive"
-                width={400}
-                height={300}
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
-          ))}
-        </div>
+        <Suspense fallback={<GallerySkeleton />}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {galleryImages?.map((image, index) => (
+              <div
+                key={index}
+                className="relative overflow-hidden rounded-md shadow-md group"
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  layout="responsive"
+                  width={400}
+                  height={300}
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+            ))}
+            {!galleryImages && <p>Gallery is empty</p>}
+          </div>
+        </Suspense>
 
         {/* <div className="flex flex-col gap-10">
           <Gallery
-            widths={[500, 1000, 1600]}
-            ratios={[2.2, 4, 6, 8]}
-            images={galleryImages}
-            lastRowBehavior="match-previous"
-            // overlay={(i) => <div style={overlayStyle}>{overlays[i]}</div>}
+          widths={[500, 1000, 1600]}
+          ratios={[2.2, 4, 6, 8]}
+          images={galleryImages}
+          lastRowBehavior="match-previous"
+          // overlay={(i) => <div style={overlayStyle}>{overlays[i]}</div>}
           />
-        </div> */}
+          </div> */}
       </MaxWidthWrapper>
     </section>
   );
