@@ -3,7 +3,7 @@
 import { FC } from "react";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import Image from "next/image";
-import { FaFacebook, FaInstagram } from "react-icons/fa6";
+
 import { ids, socialLinks, specialEvents } from "@/app/data/links";
 import Link from "next/link";
 
