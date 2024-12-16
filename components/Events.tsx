@@ -13,7 +13,7 @@ interface EventsProps {}
 const Events: FC<EventsProps> = ({}) => {
   return (
     <section id="events" className="min-h-fit py-4 relative overflow-hidden">
-      <MaxWidthWrapper className="flex min-h-[30rem] max-h-[40rem] md:flex-row justify-center flex-col md:items-center z-10 my-12">
+      <MaxWidthWrapper className="flex min-h-[30rem] max-h-[35rem] md:flex-row justify-center flex-col md:items-center z-10 md:my-16 my-4">
         <div className="md:w-1/3 space-y-4 w-4/5 mx-auto text-center md:text-start">
           <h1 className="md:text-[81px] font-medium text-2xl  leading-none text-foreground">
             Upcoming <br className="hidden md:flex" />
@@ -31,11 +31,11 @@ const Events: FC<EventsProps> = ({}) => {
             </span>
           </Link>
         </div>
-        <div className="md:w-2/3 md:h-[44rem] h-[35rem]  w-full mx-auto cursor-grab py-12">
+        <div className="md:w-2/3 md:h-[44rem] h-[35rem]  w-full mx-auto cursor-grab md:py-8">
           <EventSlider />
         </div>
       </MaxWidthWrapper>
-      <div className=" h-[512px] bottom-[-10rem] left-[-12rem] aspect-square flex justify-center items-center absolute z-0 opacity-90 md:flex hidden">
+      <div className=" h-[512px] bottom-[-10rem] left-[-12rem] aspect-square  justify-center items-center absolute z-0 opacity-90 md:flex hidden ">
         <Image
           src="/Square Matrix.png"
           alt="Square Matrix"

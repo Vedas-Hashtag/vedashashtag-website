@@ -13,7 +13,7 @@ const HackthonHype: FC<HackthonHypeProps> = ({}) => {
   return (
     <div className="md:h-[22rem] h-[16rem] bg-primary md:p-16 p-8 relative overflow-hidden">
       <MaxWidthWrapper className="text-center flex justify-evenly items-center flex-col h-full z-20">
-        <SectionTitle>vedas hackathon</SectionTitle>
+        <SectionTitle variants="secondary">vedas hackathon</SectionTitle>
         <SectionDescription className="capitalize md:text-[60px] text-2xl font-medium">
           The biggest hashtag event of the year
         </SectionDescription>
