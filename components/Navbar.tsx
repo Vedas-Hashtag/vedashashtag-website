@@ -7,7 +7,7 @@ import MaxWidthWrapper from "./MaxWidthWrapper";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
-import { links, navLinks } from "@/app/data/links";
+import { navLinks } from "@/app/data/links";
 import MobileNavbar from "./MobileNavbar";
 
 interface NavbarProps {}
