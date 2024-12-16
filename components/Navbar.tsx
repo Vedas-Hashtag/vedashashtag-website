@@ -7,11 +7,9 @@ import MaxWidthWrapper from "./MaxWidthWrapper";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
-import { links } from "@/app/data/links";
+import { links, navLinks } from "@/app/data/links";
 import MobileNavbar from "./MobileNavbar";
-import { Separator } from "./ui/separator";
 
-import NotificationComponent from "./NotificationComponent";
 interface NavbarProps {}
 
 const Navbar: FC<NavbarProps> = ({}) => {
@@ -51,7 +49,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
       )} */}
       <MaxWidthWrapper className="py-3 z-2 relative">
         <div className="flex items-center justify-between">
-          <div className="w-[90px]">
+          <div className="w-[200px]">
             <Link href="/" title="Home" aria-label="Home">
               <Image
                 src={"/logo.png"}
@@ -68,13 +66,13 @@ const Navbar: FC<NavbarProps> = ({}) => {
             </div>
             <div className="hidden lg:flex">
               <ul className="flex items-center gap-4 font-medium text-accent-background flex-1">
-                {links.map((link) => (
+                {navLinks.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
                       className={cn(
                         buttonVariants({ variant: "ghost" }),
-                        "scroll-smooth"
+                        "scroll-smooth uppercase"
                       )}
                       title={link.name}
                       aria-label={link.name}
@@ -86,14 +84,14 @@ const Navbar: FC<NavbarProps> = ({}) => {
               </ul>
             </div>
           </div>
-          <div className="flex flex-row h-full w-fit ml-2 items-center justify-center">
+          {/*   <div className="flex flex-row h-full w-fit ml-2 items-center justify-center">
             <Separator
               className="text-4xl text-primary h-[2rem] mr-2"
               orientation="vertical"
             />
 
             <NotificationComponent />
-          </div>
+          </div> */}
         </div>
       </MaxWidthWrapper>
     </nav>
