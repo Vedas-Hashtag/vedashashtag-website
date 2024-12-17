@@ -17,7 +17,7 @@ const AboutUs: FC<AboutUsProps> = ({}) => {
     >
       <MaxWidthWrapper className="px-4 mx-auto z-10 relative">
         <div className="flex flex-col items-center justify-center space-y-6 z-20 relative mt-10 md:mt-0">
-          <SectionTitle>Who are we</SectionTitle>
+          <SectionTitle>Who we are</SectionTitle>
           <SectionDescription>
             Hashtag is a student community made by students, for students, to
             invoke a sense of coding culture and networking within us!
