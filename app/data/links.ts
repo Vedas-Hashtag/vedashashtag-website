@@ -17,6 +17,10 @@ export const ids = [
     name: "Membership",
     href: "/#membership",
   },
+  {
+    name: "Linktree",
+    href: "https://linktr.ee/vedashashtag",
+  },
   // {
   //   name: "Contact",
   //   href: "/#contact",
@@ -38,11 +42,11 @@ export const navLinks = [
   },
   {
     name: "Apply to become a member",
-    href: "/",
+    href: "https://forms.gle/2Qq2kRpRgHnwGMoaA",
   },
   {
     name: "Contact",
-    href: "/",
+    href: "#footer",
   },
 ];
 

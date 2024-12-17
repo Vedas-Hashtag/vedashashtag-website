@@ -32,6 +32,9 @@ export const metadata: Metadata = {
     description:
       "This is the home page of Vedas Hashtag. A community of students from Vedas College. Join Us today to be part of the organizing committee in every event that takes place in Vedas College.",
   },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -41,10 +44,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        {/* Set the favicon */}
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${pixel.variable} antialiased`}
       >

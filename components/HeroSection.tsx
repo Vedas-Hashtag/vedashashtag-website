@@ -45,7 +45,9 @@ const HeroSection: FC<HeroSectionProps> = ({}) => {
               Bootcamps, Workshops, Events and More!
             </p>
             <Link
-              href="#membership"
+              href="https://forms.gle/s9RcuDtfkqXHTdHF9"
+              target="_blank"
+              referrerPolicy="no-referrer"
               className={cn(
                 buttonVariants({ variant: "secondary" }),
                 "mt-4 uppercase"
@@ -58,7 +60,7 @@ const HeroSection: FC<HeroSectionProps> = ({}) => {
           {/* Right Content */}
           <div className="flex relative justify-center md:w-1/2 w-full ">
             {/* <div className="z-10 relative lg:w-[21rem] w-[14rem] aspect-square border-4 border-white rounded-full grid place-items-center">*/}
-            <div className="rounded-full border-4 border-white aspect-square flex justify-center items-center bg-white lg:h-[130px] h-[100px]  my-8 relative lg:top-[112px] top-[70px] left-[20px] lg:left-[33px] z-10">
+            <div className="rounded-full border-4 border-white aspect-square flex justify-center items-center bg-white lg:h-[164px] h-[100px] md:h-[128px] md:top-[107px] md:left-[25px]  my-8 relative lg:top-[85px] top-[70px] left-[20px] lg:left-[30px] z-10">
               <Image
                 src="/logo.png"
                 alt="Vedas Hashtag"
@@ -75,13 +77,14 @@ const HeroSection: FC<HeroSectionProps> = ({}) => {
                 className="z-0 absolute brightness-50 opacity-30 blur-sm rounded-full"
               />
             </div>
-            <div className="absolute lg:top-[-50px] w-[300px] md:w-[506px]  ">
+            <div className="absolute lg:top-[-50px] w-[300px] md:w-[400px] lg:w-[506px]  ">
               <Image
                 src={"/ImageHolder.png"}
                 alt="Vedas Hashtag"
                 width={500}
                 height={500}
                 className="object-cover"
+                priority
               />
             </div>
           </div>
