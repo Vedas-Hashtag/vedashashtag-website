@@ -1,6 +1,6 @@
 export const efforts = [
   {
-    title: "Successful Events",
+    title: "Events",
     count: "5+",
   },
   {

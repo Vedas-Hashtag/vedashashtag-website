@@ -7,7 +7,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { HiMenu } from "react-icons/hi";
-import { links } from "@/app/data/links";
+import { navLinks } from "@/app/data/links";
 import { buttonVariants } from "./ui/button";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -26,7 +26,7 @@ const MobileNavbar = () => {
         <SheetHeader>
           <SheetDescription>
             <ul className="flex items-center gap-4 font-medium text-accent-background flex-col">
-              {links.map((link) => (
+              {navLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}

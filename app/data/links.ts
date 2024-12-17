@@ -26,6 +26,26 @@ export const ids = [
   //   href: "/#efforts",
   // },
 ];
+
+export const navLinks = [
+  {
+    name: "About",
+    href: "/#about",
+  },
+  {
+    name: "Events",
+    href: "/#events",
+  },
+  {
+    name: "Apply to become a member",
+    href: "/",
+  },
+  {
+    name: "Contact",
+    href: "/",
+  },
+];
+
 export const links = [
   {
     name: "Home",

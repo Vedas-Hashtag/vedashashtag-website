@@ -6,16 +6,17 @@ import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { SectionDescription, SectionTitle } from "./Holder";
 interface HackthonHypeProps {}
 
 const HackthonHype: FC<HackthonHypeProps> = ({}) => {
   return (
     <div className="md:h-[22rem] h-[16rem] bg-primary md:p-16 p-8 relative overflow-hidden">
-      <MaxWidthWrapper className="text-center flex justify-evenly items-center flex-col h-full z-10">
-        <h1 className="text-foreground uppercase ">vedas hackathon</h1>
-        <p className="capitalize md:text-5xl text-2xl font-semibold">
-          The biggest Hashtag Event Of The Year
-        </p>
+      <MaxWidthWrapper className="text-center flex justify-evenly items-center flex-col h-full z-20">
+        <SectionTitle variants="secondary">vedas hackathon</SectionTitle>
+        <SectionDescription className="capitalize md:text-[60px] text-2xl font-medium">
+          The biggest hashtag event of the year
+        </SectionDescription>
         <Link href={"/"} className={buttonVariants({ variant: "secondary" })}>
           Learn More <ArrowRight className="inline" />
         </Link>

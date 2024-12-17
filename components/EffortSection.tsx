@@ -5,26 +5,25 @@ import MaxWidthWrapper from "./MaxWidthWrapper";
 import Image from "next/image";
 import { efforts } from "@/app/data/effortSection";
 import React from "react";
+import { SectionDescription, SectionTitle } from "./Holder";
 interface EffortSectionProps {}
 
 const EffortSection: FC<EffortSectionProps> = ({}) => {
   return (
     <section
       id="efforts"
-      className="h-[20rem] flex justify-center items-center bg-foreground text-accent-foreground relative"
+      className="h-[500px] flex justify-center items-center bg-foreground text-accent-foreground relative"
     >
-      <MaxWidthWrapper className="my-auto mx-auto text-center relative z-10 space-y-4">
-        <h1 className=" font-normal mb-4 uppercase text-lg text-muted">
-          our effort
-        </h1>
-        <p className="font-semibold text-secondary text-3xl text-center">
+      <MaxWidthWrapper className="mx-auto text-center relative z-10 space-y-12  md:mt-0">
+        <SectionTitle variants="secondary">our effort</SectionTitle>
+        <SectionDescription variants="secondary">
           What we&apos;ve managed to achieve
-        </p>
-        <div className="grid grid-cols-2 gap-4 md:place-items-start md:w-1/2 place-items-center mx-auto">
+        </SectionDescription>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:place-items-start md:w-full place-items-center mx-auto">
           {efforts.map((val, _) => {
             return (
               <p
-                className="lg:text-2xl md:text-xl text-lg uppercase font-medium text-background"
+                className="lg:text-[40px] md:text-xl text-lg uppercase font-medium text-background text-center w-full"
                 key={_}
               >
                 <span className="text-primary font-semibold">{val.count}</span>{" "}
@@ -43,7 +42,7 @@ const EffortSection: FC<EffortSectionProps> = ({}) => {
           className=" object-contain "
         />
       </div>
-      <div className="rounded-full h-40 top-[30%] left-[0] aspect-square flex justify-center items-center absolute z-0 opacity-90">
+      <div className="rounded-full h-60 top-[30%] left-[0] aspect-square flex justify-center items-center absolute z-0 opacity-90">
         <Image
           src="/Sphere.png"
           alt="Vedas Hashtag Logo"

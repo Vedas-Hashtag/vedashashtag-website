@@ -32,7 +32,7 @@ export default {
           foreground: "hsl(var(--popover-foreground))",
         },
         primary: {
-          DEFAULT: "hsl(var(--primary))",
+          DEFAULT: "rgba(135, 136, 233, 1)",
           foreground: "hsl(var(--primary-foreground))",
           background: "hsl(var(--primary-background))",
         },

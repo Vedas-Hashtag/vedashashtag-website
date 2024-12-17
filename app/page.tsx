@@ -1,7 +1,8 @@
 import AboutUs from "@/components/AboutSection";
 import EffortSection from "@/components/EffortSection";
+import EmptySection from "@/components/EmptySection";
 import Events from "@/components/Events";
-import GallerySection from "@/components/GallerySection";
+// import GallerySection from "@/components/GallerySection";
 import HackthonHype from "@/components/HackthonHype";
 import HeroSection from "@/components/HeroSection";
 
@@ -16,7 +17,8 @@ export default function Home() {
       <EffortSection />
       <Events />
       <HackthonHype />
-      <GallerySection />
+      {/* <GallerySection /> */}
+      <EmptySection />
     </main>
   );
 }
