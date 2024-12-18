@@ -7,6 +7,7 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { buttonVariants } from "./ui/button";
 import { SectionDescription, SectionTitle } from "./Holder";
+import { formLinks } from "@/app/data/links";
 interface AboutUsProps {}
 
 const AboutUs: FC<AboutUsProps> = ({}) => {
@@ -23,7 +24,7 @@ const AboutUs: FC<AboutUsProps> = ({}) => {
             invoke a sense of coding culture and networking within us!
           </SectionDescription>
           <Link
-            href="https://forms.gle/2Qq2kRpRgHnwGMoaA"
+            href={formLinks.membership}
             className={`bg-primary text-white px-8  py-2 rounded-md mt-4 w-[fit-content] flex items-center gap-2 group ${buttonVariants(
               { variant: "default" }
             )}`}

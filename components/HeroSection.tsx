@@ -7,6 +7,7 @@ import Image from "next/image";
 import { buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
+import { formLinks } from "@/app/data/links";
 
 interface HeroSectionProps {}
 
@@ -45,7 +46,7 @@ const HeroSection: FC<HeroSectionProps> = ({}) => {
               Bootcamps, Workshops, Events and More!
             </p>
             <Link
-              href="https://forms.gle/s9RcuDtfkqXHTdHF9"
+              href={formLinks.membership}
               target="_blank"
               referrerPolicy="no-referrer"
               className={cn(

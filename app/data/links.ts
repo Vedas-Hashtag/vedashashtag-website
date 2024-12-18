@@ -42,7 +42,7 @@ export const navLinks = [
   },
   {
     name: "Apply to become a member",
-    href: "https://forms.gle/2Qq2kRpRgHnwGMoaA",
+    href: "https://forms.gle/VDNX7e8Ps33Npdef6",
   },
   {
     name: "Contact",
@@ -101,3 +101,8 @@ export const specialEvents = [
     href: "https://discord.gg/M7R25pxE4r",
   },
 ];
+
+export const formLinks = {
+  hackathon: "https://forms.gle/2Qq2kRpRgHnwGMoaA",
+  membership: "https://forms.gle/VDNX7e8Ps33Npdef6",
+};
