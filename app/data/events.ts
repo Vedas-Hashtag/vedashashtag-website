@@ -20,11 +20,11 @@ export const events = [
     image: "/events/3.webp",
     link: "/events/holi-2081",
   },
-  {
-    title: "Open Source and Linux Introductory Session",
-    description:
-      "A beginner-friendly workshop designed to introduce the fundamentals of Linux and the open-source philosophy. Gain hands-on experience with Linux commands and learn about the opportunities in open-source development.",
-    image: "/events/linux-session-placeholder.png",
-    link: "/events/open-source-linux-session",
-  },
+  // {
+  //   title: "Open Source and Linux Introductory Session",
+  //   description:
+  //     "A beginner-friendly workshop designed to introduce the fundamentals of Linux and the open-source philosophy. Gain hands-on experience with Linux commands and learn about the opportunities in open-source development.",
+  //   image: "/events/linux-session-placeholder.png",
+  //   link: "/events/open-source-linux-session",
+  // },
 ];
