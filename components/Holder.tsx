@@ -13,7 +13,7 @@ export const SectionTitle = ({
 
   return (
     <h2
-      className={`md:text-[20px] text-[16px] font-medium mb-4 uppercase ${variantClasses} ${className}`}
+      className={`lg:text-[20px] md:text-[18px] text-[16px] font-medium mb-4 uppercase ${variantClasses} ${className}`}
     >
       {children}
     </h2>
@@ -37,7 +37,7 @@ export const SectionDescription = ({
 
   return (
     <p
-      className={`font-medium md:text-[46px] text-[24px] text-center ${variantClasses} ${className}`}
+      className={`font-medium lg:text-[46px] md:text-[36px] text-[24px] text-center ${variantClasses} ${className}`}
     >
       {children}
     </p>

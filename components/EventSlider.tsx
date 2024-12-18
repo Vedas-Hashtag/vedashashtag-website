@@ -15,6 +15,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { events } from "@/app/data/events";
 import Image from "next/image";
+import React from "react";
 
 interface EventSliderProps {}
 
@@ -31,42 +32,83 @@ const EventSlider: FC<EventSliderProps> = ({}) => {
   }
 
   return (
-    <Swiper
-      slidesPerView={numbersOfSlides}
-      spaceBetween={10}
-      freeMode={true}
-      autoplay={{
-        delay: 2500,
-        disableOnInteraction: true,
-      }}
-      pagination={{
-        clickable: true,
-      }}
-      mousewheel={true}
-      navigation={true}
-      modules={[Pagination, FreeMode, Autoplay, Mousewheel, Navigation]}
-      className="w-full h-full mySlider transition-all"
-    >
-      {events.map((val, index) => (
-        <SwiperSlide key={index} className="relative">
-          {/* Slide Image */}
-          <Image
-            src={val.image || "/logo.png"}
-            alt={val.title}
-            height={300}
-            width={400}
-            className="object-cover absolute inset-0 brightness-50 object-center z-0  bg-black"
-          />
-          {/* Explore Button */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center z-10">
-            <h1 className="text-white font-bold drop-shadow-3xl">
-              {val.title}
-            </h1>
-          </div>
-          {/* Description with Transition */}
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <>
+      <div className="flex lg:hidden w-full h-full">
+        <Swiper
+          slidesPerView={numbersOfSlides}
+          spaceBetween={10}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: true,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          mousewheel={true}
+          navigation={true}
+          modules={[Pagination, Autoplay, Navigation]}
+          className="w-full h-full mySlider transition-all hidden lg:flex"
+        >
+          {events.map((val, index) => (
+            <SwiperSlide key={index} className="relative">
+              {/* Slide Image */}
+              <Image
+                src={val.image || "/logo.png"}
+                alt={val.title}
+                height={300}
+                width={400}
+                className="object-cover absolute inset-0 brightness-50 object-center z-0  bg-black"
+              />
+              {/* Explore Button */}
+              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center z-10">
+                <h1 className="text-white font-bold drop-shadow-3xl">
+                  {val.title}
+                </h1>
+              </div>
+              {/* Description with Transition */}
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+      <div className="hidden lg:flex w-full h-full">
+        <Swiper
+          slidesPerView={numbersOfSlides}
+          spaceBetween={10}
+          freeMode={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: true,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          mousewheel={true}
+          navigation={true}
+          modules={[Pagination, FreeMode, Autoplay, Mousewheel, Navigation]}
+          className="w-full h-full mySlider transition-all  lg:hidden"
+        >
+          {events.map((val, index) => (
+            <SwiperSlide key={index} className="relative">
+              {/* Slide Image */}
+              <Image
+                src={val.image || "/logo.png"}
+                alt={val.title}
+                height={300}
+                width={400}
+                className="object-cover absolute inset-0 brightness-50 object-center z-0  bg-black"
+              />
+              {/* Explore Button */}
+              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center z-10">
+                <h1 className="text-white font-bold drop-shadow-3xl">
+                  {val.title}
+                </h1>
+              </div>
+              {/* Description with Transition */}
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </>
   );
 };
 

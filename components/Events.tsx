@@ -14,8 +14,8 @@ const Events: FC<EventsProps> = ({}) => {
   return (
     <section id="events" className="min-h-fit py-4 relative overflow-hidden">
       <MaxWidthWrapper className="flex min-h-[30rem] max-h-[35rem] md:flex-row justify-center flex-col md:items-center z-10 md:my-16 my-4">
-        <div className="md:w-1/3 space-y-4 w-4/5 mx-auto text-center md:text-start">
-          <h1 className="md:text-[81px] font-medium text-2xl  leading-none text-foreground">
+        <div className="lg:w-1/3 md:w-1/2 space-y-4 w-4/5 mx-auto text-center md:text-start">
+          <h1 className="lg:text-[81px] md:text-[60px] font-medium text-2xl  leading-none text-foreground">
             Upcoming <br className="hidden md:flex" />
             Events &gt;
           </h1>
@@ -31,7 +31,7 @@ const Events: FC<EventsProps> = ({}) => {
             </span>
           </Link>
         </div>
-        <div className="md:w-2/3 md:h-[44rem] h-[35rem]  w-full mx-auto cursor-grab md:py-8">
+        <div className="lg:w-2/3 md:w-1/2 md:h-[44rem] h-[35rem]  w-full mx-auto cursor-grab md:py-8">
           <EventSlider />
         </div>
       </MaxWidthWrapper>
