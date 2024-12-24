@@ -23,16 +23,47 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Home | Vedas Hashtag ",
+  title: "Home | Vedas Hashtag - Join the Community of Vedas College Students",
   description:
-    "This is the home page of Vedas Hashtag. A community of students from Vedas College. Join Us today to be part of the organizing committee in every event that takes place in Vedas College.",
+    "Welcome to Vedas Hashtag, the home page for the vibrant community of students from Vedas College. Join us today and be part of the organizing committee for every event at Vedas College.",
   openGraph: {
-    title: "Home | Vedas Hashtag ",
+    title:
+      "Home | Vedas Hashtag - Join the Community of Vedas College Students",
     description:
-      "This is the home page of Vedas Hashtag. A community of students from Vedas College. Join Us today to be part of the organizing committee in every event that takes place in Vedas College.",
+      "Welcome to Vedas Hashtag, the home page for the vibrant community of students from Vedas College. Join us today and be part of the organizing committee for every event at Vedas College.",
+    url: "https://www.vedashashtag.com",
+    type: "website",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Vedas Hashtag",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@vedashashtag",
+    title:
+      "Home | Vedas Hashtag - Join the Community of Vedas College Students",
+    description:
+      "Welcome to Vedas Hashtag, the home page for the vibrant community of students from Vedas College. Join us today and be part of the organizing committee for every event at Vedas College.",
+    images: ["/images/twitter-image.jpg"],
   },
   icons: {
     icon: "/favicon.ico",
+  },
+  keywords: [
+    "Vedas Hashtag",
+    "Vedas College",
+    "student community",
+    "college events",
+    "organizing committee",
+  ],
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
