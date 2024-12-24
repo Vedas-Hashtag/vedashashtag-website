@@ -2,7 +2,9 @@
 
 "use client";
 import { FC, Suspense } from "react";
-import ReactPlayer from "react-player";
+import dynamic from "next/dynamic";
+
+const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 import Loading from "./Loading";
 
 interface VideoIntroductionProps {}

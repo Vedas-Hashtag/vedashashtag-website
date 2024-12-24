@@ -60,6 +60,13 @@ export const metadata: Metadata = {
     "student community",
     "college events",
     "organizing committee",
+    "vedas",
+    "hashtag",
+    "networking",
+    "collaboration",
+    "innovation",
+    "leadership",
+    "teamwork",
   ],
   robots: {
     index: true,
