@@ -1,7 +1,8 @@
-import React from 'react';
-import { Globe, Github, Twitter } from 'lucide-react';
+import React from "react";
+import { Globe, Github, Twitter } from "lucide-react";
+import ContributorSlider from "./ContributorsSlide";
 
-interface Contributor {
+export interface Contributor {
   login: string;
   avatar_url: string;
   html_url: string;
@@ -17,9 +18,13 @@ interface ContributorsListProps {
   error?: string | null;
 }
 
-const ContributorCard = ({ contributor }: { contributor: Contributor }) => (
+export const ContributorCard = ({
+  contributor,
+}: {
+  contributor: Contributor;
+}) => (
   <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
-    <div className="flex flex-col items-center text-center">
+    <div className="flex flex-col items-center text-center space-y-2">
       <img
         src={contributor.avatar_url}
         alt={`${contributor.login}'s avatar`}
@@ -27,6 +32,10 @@ const ContributorCard = ({ contributor }: { contributor: Contributor }) => (
         loading="lazy"
       />
       <h3 className="text-lg font-semibold mb-4">{contributor.login}</h3>
+      <p className="text-muted-foreground text-sm">
+        Contributions:
+        {contributor.contributions}
+      </p>
       <div className="flex space-x-3">
         <a
           href={contributor.html_url}
@@ -78,12 +87,14 @@ const LoadingSkeleton = () => (
   </div>
 );
 
-const ContributorsList: React.FC<ContributorsListProps> = ({ 
-  organization, 
-  contributors, 
+const ContributorsList: React.FC<ContributorsListProps> = ({
+  organization,
+  contributors,
   isLoading = false,
-  error = null 
+  error = null,
 }) => {
+  console.log(contributors);
+
   if (error) {
     return (
       <div className="max-w-7xl mx-auto px-4 py-8">
@@ -101,7 +112,7 @@ const ContributorsList: React.FC<ContributorsListProps> = ({
           People behind the magic
         </span>
       </div>
-      
+
       <h2 className="text-3xl font-bold mb-8">Contributors</h2>
 
       {isLoading ? (
@@ -111,14 +122,7 @@ const ContributorsList: React.FC<ContributorsListProps> = ({
           ))}
         </div>
       ) : contributors.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {contributors.map((contributor) => (
-            <ContributorCard 
-              key={contributor.login} 
-              contributor={contributor} 
-            />
-          ))}
-        </div>
+        <ContributorSlider contributor={contributors} />
       ) : (
         <p className="text-center text-gray-500">
           No contributors found for {organization}.

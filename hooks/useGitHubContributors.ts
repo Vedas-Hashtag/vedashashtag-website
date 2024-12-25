@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 export interface Contributor {
   login: string;
@@ -7,24 +7,27 @@ export interface Contributor {
   contributions: number;
 }
 
-export const fetchContributors = async (organization: string, token?: string): Promise<Contributor[]> => {
+export const fetchContributors = async (
+  organization: string,
+  token?: string
+): Promise<Contributor[]> => {
   const contributorsMap: Record<string, Contributor> = {};
-  
+
   const headers = {
-    'Accept': 'application/vnd.github.v3+json',
-    ...(token && { 'Authorization': `token ${token}` }) // changed it from bearer to token
+    Accept: "application/vnd.github.v3+json",
+    ...(token && { Authorization: `token ${token}` }), // changed it from bearer to token
   };
 
   try {
     // First, check if we can access the organization
     const reposResponse = await axios.get(
-      `https://api.github.com/orgs/${organization}/repos`, 
-      { 
+      `https://api.github.com/orgs/${organization}/repos`,
+      {
         headers,
         params: {
           per_page: 100, // per page ma ajha repoa
-          type: 'public'  // jus fetch public repos
-        }
+          type: "public", // jus fetch public repos
+        },
       }
     );
 
@@ -35,11 +38,11 @@ export const fetchContributors = async (organization: string, token?: string): P
         try {
           const contributorsResponse = await axios.get(
             `https://api.github.com/repos/${organization}/${repo.name}/contributors`,
-            { 
+            {
               headers,
               params: {
-                per_page: 100 
-              }
+                per_page: 100,
+              },
             }
           );
 
@@ -52,7 +55,8 @@ export const fetchContributors = async (organization: string, token?: string): P
                 contributions: contributor.contributions,
               };
             } else {
-              contributorsMap[contributor.login].contributions += contributor.contributions;
+              contributorsMap[contributor.login].contributions +=
+                contributor.contributions;
             }
           });
         } catch (error) {
@@ -66,12 +70,14 @@ export const fetchContributors = async (organization: string, token?: string): P
   } catch (error) {
     if (axios.isAxiosError(error)) {
       if (error.response?.status === 403) {
-        console.error('API rate limit exceeded or authentication required');
+        console.error("API rate limit exceeded or authentication required");
         if (!token) {
-          console.error('Consider adding a GitHub token for higher rate limits');
+          console.error(
+            "Consider adding a GitHub token for higher rate limits"
+          );
         }
       } else if (error.response?.status === 404) {
-        console.error('Organization not found or no public access');
+        console.error("Organization not found or no public access");
       }
     }
     throw error;

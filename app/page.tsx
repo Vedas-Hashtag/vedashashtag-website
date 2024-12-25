@@ -10,7 +10,8 @@ import { fetchContributors } from "@/hooks/useGitHubContributors";
 
 export default async function Home() {
   const organization = "Vedas-Hashtag";
-  const contributors = await fetchContributors(organization);
+  const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
+  const contributors = await fetchContributors(organization, token);
 
   return (
     <main>
@@ -21,7 +22,10 @@ export default async function Home() {
       <Events />
       <HackthonHype />
       {/* <GallerySection /> */}
-      <ContributorsList organization={organization} contributors={contributors} />
+      <ContributorsList
+        organization={organization}
+        contributors={contributors}
+      />
     </main>
   );
 }
