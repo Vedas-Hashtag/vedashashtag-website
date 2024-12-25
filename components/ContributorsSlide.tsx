@@ -7,7 +7,6 @@ import {
   Pagination,
   FreeMode,
   Autoplay,
-  Mousewheel,
   Navigation,
   Scrollbar,
 } from "swiper/modules";
@@ -24,7 +23,7 @@ interface ContributorSliderProps {
 
 const ContributorSlider: FC<ContributorSliderProps> = ({ contributor }) => {
   const width = useWidth();
-  const numbersOfSlides = width <= 1028 ? 1 : 3;
+  const numbersOfSlides = width <= 768 ? 1 : width <= 1028 ? 3 : 5;
 
   const renderSwiper = (isMobile: boolean) => (
     <Swiper
@@ -38,18 +37,10 @@ const ContributorSlider: FC<ContributorSliderProps> = ({ contributor }) => {
         clickable: true,
       }}
       freeMode={isMobile ? false : true}
-      mousewheel={true}
       navigation={true}
       scrollbar={isMobile ? undefined : { draggable: true, hide: true }}
-      modules={[
-        Pagination,
-        FreeMode,
-        Autoplay,
-        Mousewheel,
-        Navigation,
-        Scrollbar,
-      ]}
-      className={`w-full h-full mySlider transition-all ${
+      modules={[Pagination, FreeMode, Autoplay, Navigation, Scrollbar]}
+      className={`w-full h-full mySlider transition-all mx-auto ${
         isMobile ? "lg:hidden" : "hidden lg:flex"
       }`}
     >

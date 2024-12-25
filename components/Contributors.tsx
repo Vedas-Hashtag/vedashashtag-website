@@ -1,6 +1,7 @@
 import React from "react";
 import { Globe, Github, Twitter } from "lucide-react";
 import ContributorSlider from "./ContributorsSlide";
+import MaxWidthWrapper from "./MaxWidthWrapper";
 
 export interface Contributor {
   login: string;
@@ -28,7 +29,7 @@ export const ContributorCard = ({
       <img
         src={contributor.avatar_url}
         alt={`${contributor.login}'s avatar`}
-        className="w-32 h-32 rounded-lg object-cover mb-4"
+        className="w-24 h-24 rounded-lg object-cover mb-4"
         loading="lazy"
       />
       <h3 className="text-lg font-semibold mb-4">{contributor.login}</h3>
@@ -104,7 +105,7 @@ const ContributorsList: React.FC<ContributorsListProps> = ({
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
+    <MaxWidthWrapper className="max-w-7xl mx-auto px-4 py-8">
       <div className="mb-6">
         <span className="inline-block px-4 py-1 rounded-full bg-green-100 text-sm text-green-800">
           People behind the magic
@@ -126,7 +127,7 @@ const ContributorsList: React.FC<ContributorsListProps> = ({
           No contributors found for {organization}.
         </p>
       )}
-    </div>
+    </MaxWidthWrapper>
   );
 };
 

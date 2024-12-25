@@ -15,7 +15,7 @@ const HeroSection: FC<HeroSectionProps> = ({}) => {
   return (
     <section className="relative bg-primary text-primary-foreground text-center w-full md:my-0 py-10 md:py-0 h-[861px]">
       {/* Background Ring */}
-      <div className="absolute z-0 h-[658px] md:top-[20rem] md:left-10 lg:left-[-17rem] left-0 top-[12rem] blur- opacity-30">
+      <div className="absolute z-0 h-[658px] md:top-[20rem] md:left-[-7rem] lg:left-[-17rem] left-0 top-[12rem] blur- opacity-30">
         <Image
           src="/ring-background.png"
           alt="Ring background"
