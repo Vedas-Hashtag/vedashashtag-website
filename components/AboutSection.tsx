@@ -14,7 +14,7 @@ const AboutUs: FC<AboutUsProps> = ({}) => {
   return (
     <section
       id="about"
-      className="grid place-items-center min-h-[15rem] relative -top-10"
+      className="grid place-items-center min-h-[15rem] relative -top-10 md:mt-[-10rem]"
     >
       <MaxWidthWrapper className="px-4 mx-auto z-10 relative">
         <div className="flex flex-col items-center justify-center space-y-6 z-20 relative mt-10 md:mt-0">
