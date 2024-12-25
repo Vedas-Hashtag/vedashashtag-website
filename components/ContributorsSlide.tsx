@@ -37,6 +37,7 @@ const ContributorSlider: FC<ContributorSliderProps> = ({ contributor }) => {
       pagination={{
         clickable: true,
       }}
+      freeMode={isMobile ? false : true}
       mousewheel={true}
       navigation={true}
       scrollbar={isMobile ? undefined : { draggable: true, hide: true }}
