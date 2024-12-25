@@ -24,84 +24,46 @@ interface ContributorSliderProps {
 
 const ContributorSlider: FC<ContributorSliderProps> = ({ contributor }) => {
   const width = useWidth();
+  const numbersOfSlides = width <= 1028 ? 1 : 3;
 
-  let numbersOfSlides = 3;
-  if (width) {
-    if (width <= 1028) {
-      numbersOfSlides = 1;
-    } else {
-      numbersOfSlides = 3;
-    }
-  }
+  const renderSwiper = (isMobile: boolean) => (
+    <Swiper
+      slidesPerView={numbersOfSlides}
+      spaceBetween={10}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: true,
+      }}
+      pagination={{
+        clickable: true,
+      }}
+      mousewheel={true}
+      navigation={true}
+      scrollbar={isMobile ? undefined : { draggable: true, hide: true }}
+      modules={[
+        Pagination,
+        FreeMode,
+        Autoplay,
+        Mousewheel,
+        Navigation,
+        Scrollbar,
+      ]}
+      className={`w-full h-full mySlider transition-all ${
+        isMobile ? "lg:hidden" : "hidden lg:flex"
+      }`}
+    >
+      {contributor?.map((contributor, index) => (
+        <SwiperSlide key={index} className="relative">
+          <ContributorCard key={contributor.login} contributor={contributor} />
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  );
 
   return (
     <>
-      <div className="flex lg:hidden w-full h-full">
-        <Swiper
-          slidesPerView={numbersOfSlides}
-          spaceBetween={10}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: true,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          mousewheel={true}
-          navigation={true}
-          modules={[Pagination, Autoplay, Navigation]}
-          className="w-full h-full mySlider transition-all hidden lg:flex"
-        >
-          {contributor?.map((contributor, index) => (
-            <SwiperSlide key={index} className="relative">
-              {/* Slide Image */}
-
-              <ContributorCard
-                key={contributor.login}
-                contributor={contributor}
-              />
-            </SwiperSlide>
-          ))}
-          {/* Description with Transition */}
-        </Swiper>
-      </div>
-      <div className="hidden lg:flex w-full h-full">
-        <Swiper
-          slidesPerView={numbersOfSlides}
-          spaceBetween={10}
-          freeMode={true}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: true,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          mousewheel={true}
-          navigation={true}
-          scrollbar={{ draggable: true, hide: true }}
-          modules={[
-            Pagination,
-            FreeMode,
-            Autoplay,
-            Mousewheel,
-            Navigation,
-            Scrollbar,
-          ]}
-          className="w-full h-full mySlider transition-all  lg:hidden"
-        >
-          {contributor?.map((contributor, index) => (
-            <SwiperSlide key={index} className="relative">
-              {/* Slide Image */}
-
-              <ContributorCard
-                key={contributor.login}
-                contributor={contributor}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+      <div className="flex lg:hidden w-full h-full">{renderSwiper(true)}</div>
+      <div className="hidden lg:flex w-full h-full">{renderSwiper(false)}</div>
     </>
   );
 };
@@ -115,7 +77,6 @@ const useWidth = () => {
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return width;
 };
