@@ -1,7 +1,6 @@
 import AboutUs from "@/components/AboutSection";
 import ContributorsList from "@/components/Contributors";
 import EffortSection from "@/components/EffortSection";
-import EmptySection from "@/components/EmptySection";
 import Events from "@/components/Events";
 // import GallerySection from "@/components/GallerySection";
 import HackthonHype from "@/components/HackthonHype";
@@ -23,7 +22,6 @@ export default async function Home() {
       <HackthonHype />
       {/* <GallerySection /> */}
       <ContributorsList organization={organization} contributors={contributors} />
-      <EmptySection />
     </main>
   );
 }
