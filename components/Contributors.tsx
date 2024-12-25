@@ -93,8 +93,6 @@ const ContributorsList: React.FC<ContributorsListProps> = ({
   isLoading = false,
   error = null,
 }) => {
-  console.log(contributors);
-
   if (error) {
     return (
       <div className="max-w-7xl mx-auto px-4 py-8">
