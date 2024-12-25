@@ -11,6 +11,7 @@ import { formLinks } from "@/app/data/links";
 
 interface HeroSectionProps {}
 
+// HeroSection component
 const HeroSection: FC<HeroSectionProps> = ({}) => {
   return (
     <section className="relative bg-primary text-primary-foreground text-center w-full md:my-0 py-10 md:py-0 h-[861px]">
@@ -60,7 +61,7 @@ const HeroSection: FC<HeroSectionProps> = ({}) => {
 
           {/* Right Content */}
           <div className="flex relative justify-center md:w-1/2 w-full ">
-            {/* <div className="z-10 relative lg:w-[21rem] w-[14rem] aspect-square border-4 border-white rounded-full grid place-items-center">*/}
+            {/* Logo and Abstract Line */}
             <div className="rounded-full border-4 border-white aspect-square flex justify-center items-center bg-white lg:h-[164px] h-[100px] md:h-[128px] md:top-[40px] md:left-[25px]  my-8 relative lg:top-[85px] top-[70px] left-[20px] lg:left-[30px] z-10">
               <Image
                 src="/logo.png"
@@ -78,6 +79,7 @@ const HeroSection: FC<HeroSectionProps> = ({}) => {
                 className="z-0 absolute brightness-50 opacity-30 blur-sm rounded-full"
               />
             </div>
+            {/* Image Holder */}
             <div className="absolute lg:top-[-50px] md:top-[-40px] w-[300px] md:w-[350px] lg:w-[506px]  ">
               <Image
                 src={"/ImageHolder.png"}
@@ -89,7 +91,6 @@ const HeroSection: FC<HeroSectionProps> = ({}) => {
               />
             </div>
           </div>
-          {/* </div> */}
         </div>
       </MaxWidthWrapper>
     </section>

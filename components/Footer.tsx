@@ -7,18 +7,17 @@ import Image from "next/image";
 import { ids, socialLinks, specialEvents } from "@/app/data/links";
 import Link from "next/link";
 
+// Define the props for the Footer component
 interface FooterProps {}
 
+// Footer component
 const Footer: FC<FooterProps> = ({}) => {
   return (
-    <section
-      id="footer"
-      className="bg-primary py-10 relative   bottom-0 left-0"
-    >
+    <section id="footer" className="bg-primary py-10 relative bottom-0 left-0">
       <MaxWidthWrapper>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-accent-foreground">
           {/* Logo and Social Media */}
-          <div className="flex flex-col  mr-auto space-y-4 md:space-y-0 w-full md:items-start items-center lg:justify-start ">
+          <div className="flex flex-col mr-auto space-y-4 md:space-y-0 w-full md:items-start items-center lg:justify-start">
             <div className="relative h-[10rem] aspect-square grid place-items-center">
               <Image
                 src="/logo.png"
@@ -96,6 +95,8 @@ const Footer: FC<FooterProps> = ({}) => {
             {/* <p>Phone: +977-1234567890</p> */}
           </div>
         </div>
+
+        {/* Footer Bottom Text */}
         <div className="mt-8 text-center text-sm text-white opacity-75">
           &copy; {new Date().getFullYear()} Vedas Hashtag. All rights reserved.
         </div>

@@ -8,24 +8,31 @@ import Image from "next/image";
 import { buttonVariants } from "./ui/button";
 import { SectionDescription, SectionTitle } from "./Holder";
 import { formLinks } from "@/app/data/links";
+
+// Define the props for the AboutUs component
 interface AboutUsProps {}
 
+// Define the AboutUs functional component
 const AboutUs: FC<AboutUsProps> = ({}) => {
   return (
     <section
       id="about"
       className="grid place-items-center min-h-[15rem] relative -top-10 md:mt-[-10rem]"
     >
+      {/* Wrapper to constrain the maximum width */}
       <MaxWidthWrapper className="px-4 mx-auto z-10 relative">
         <div className="flex flex-col items-center justify-center space-y-6 z-20 relative mt-10 md:mt-0">
+          {/* Section title */}
           <SectionTitle>Who we are</SectionTitle>
+          {/* Section description */}
           <SectionDescription>
             Hashtag is a student community made by students, for students, to
             invoke a sense of coding culture and networking within us!
           </SectionDescription>
+          {/* Link to membership form */}
           <Link
             href={formLinks.membership}
-            className={`bg-primary text-white px-8  py-2 rounded-md mt-4 w-[fit-content] flex items-center gap-2 group ${buttonVariants(
+            className={`bg-primary text-white px-8 py-2 rounded-md mt-4 w-[fit-content] flex items-center gap-2 group ${buttonVariants(
               { variant: "default" }
             )}`}
           >
@@ -33,6 +40,7 @@ const AboutUs: FC<AboutUsProps> = ({}) => {
             <ArrowRight className="group-hover:translate-x-2 transition-all" />
           </Link>
         </div>
+        {/* Background images */}
         <div className="grid inset-0 absolute h-full z-0 overflow-hidden">
           <Image
             src="/Oval1.png"

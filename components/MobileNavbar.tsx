@@ -25,9 +25,11 @@ const MobileNavbar = () => {
       <SheetContent>
         <SheetHeader>
           <SheetDescription>
+            {/* Navigation links list */}
             <ul className="flex items-center gap-4 font-medium text-accent-background flex-col">
               {navLinks.map((link) => (
                 <li key={link.name}>
+                  {/* Link component for navigation */}
                   <Link
                     href={link.href}
                     className={cn(

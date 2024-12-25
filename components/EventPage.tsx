@@ -7,8 +7,10 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const EventPage = () => {
+  // State to track which event is clicked
   const [clickedIndex, setClickedIndex] = useState<number | null>();
 
+  // Function to toggle the view of the event details
   const toggleView = (index: number) => {
     setClickedIndex(clickedIndex === index ? null : index);
   };

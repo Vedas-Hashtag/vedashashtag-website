@@ -20,6 +20,7 @@ export const SectionTitle = ({
   );
 };
 
+// Component for rendering section description with different variants
 export const SectionDescription = ({
   children,
   variants = "primary",

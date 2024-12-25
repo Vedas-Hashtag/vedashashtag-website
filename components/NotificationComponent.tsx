@@ -21,13 +21,14 @@ import { useTheme } from "next-themes";
 const NotificationComponent = () => {
   const { theme, setTheme } = useTheme();
 
+  // State to manage unseen notifications
   const [unseenNotifications, setUnseenNotifications] =
     React.useState(initialNotifications);
 
+  // Handle opening the notifications dropdown
   const handleOpen = () => {
     // Move all unseen notifications to seen
     console.log("this is working.");
-
     setUnseenNotifications([]);
   };
 
@@ -89,6 +90,7 @@ const NotificationComponent = () => {
         <DropdownMenuSeparator className="w-full h-[2px]" />
         <DropdownMenuItem className="w-full px-8 focus:bg-background">
           <div className="w-full flex justify-evenly space-x-2">
+            {/* Light mode toggle button */}
             <Button
               variant={"outline"}
               className={`flex-auto ${
@@ -101,6 +103,7 @@ const NotificationComponent = () => {
               <IoBulbOutline />
               <p className="hidden md:flex">Light</p>
             </Button>
+            {/* Dark mode toggle button */}
             <Button
               variant={"outline"}
               className={`flex-auto ${
@@ -113,6 +116,7 @@ const NotificationComponent = () => {
               <IoBulb className="text-foreground dark:drop-shadow-lg drop-shadow-white" />{" "}
               <p className="hidden md:flex">Dark</p>
             </Button>
+            {/* System mode toggle button */}
             <Button
               variant={"outline"}
               className={`flex-auto ${

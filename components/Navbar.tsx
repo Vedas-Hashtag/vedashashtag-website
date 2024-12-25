@@ -10,8 +10,10 @@ import { cn } from "@/lib/utils";
 import { navLinks } from "@/app/data/links";
 import MobileNavbar from "./MobileNavbar";
 
+// Define the props for the Navbar component
 interface NavbarProps {}
 
+// Navbar component
 const Navbar: FC<NavbarProps> = ({}) => {
   // State to track scroll position
   const [scrolled, setScrolled] = useState(false);
@@ -25,11 +27,9 @@ const Navbar: FC<NavbarProps> = ({}) => {
     }
   };
 
+  // Add scroll event listener on mount and clean up on unmount
   useEffect(() => {
-    // Add scroll event listener on mount
     window.addEventListener("scroll", handleScroll);
-
-    // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -37,18 +37,20 @@ const Navbar: FC<NavbarProps> = ({}) => {
 
   return (
     <nav
-      className={`border-border min-w-screen   top-0 z-50 relative w-full ${
+      className={`border-border min-w-screen top-0 z-50 relative w-full ${
         scrolled
           ? "bg-background/70 backdrop-blur-lg shadow-md sticky border-b"
           : "bg-background"
       }`}
       id="navbar"
     >
+      {/* Optional overlay when not scrolled */}
       {/* {!scrolled && (
         <div className="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
       )} */}
       <MaxWidthWrapper className="py-3 z-2 relative">
         <div className="flex items-center justify-between">
+          {/* Logo section */}
           <div className="w-[200px]">
             <Link href="/" title="Home" aria-label="Home">
               <Image
@@ -60,10 +62,13 @@ const Navbar: FC<NavbarProps> = ({}) => {
               />
             </Link>
           </div>
+          {/* Navigation links and mobile menu */}
           <div className="flex justify-end w-full items-end">
-            <div className="aspect-square h-full lg:hidden flex ">
+            {/* Mobile Navbar */}
+            <div className="aspect-square h-full lg:hidden flex">
               <MobileNavbar />
             </div>
+            {/* Desktop Navbar */}
             <div className="hidden lg:flex">
               <ul className="flex items-center gap-4 font-medium text-accent-background flex-1">
                 {navLinks.map((link) => (
@@ -84,12 +89,12 @@ const Navbar: FC<NavbarProps> = ({}) => {
               </ul>
             </div>
           </div>
-          {/*   <div className="flex flex-row h-full w-fit ml-2 items-center justify-center">
+          {/* Optional notification component */}
+          {/* <div className="flex flex-row h-full w-fit ml-2 items-center justify-center">
             <Separator
               className="text-4xl text-primary h-[2rem] mr-2"
               orientation="vertical"
             />
-
             <NotificationComponent />
           </div> */}
         </div>

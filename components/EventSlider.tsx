@@ -11,13 +11,18 @@ import { events } from "@/app/data/events";
 import Image from "next/image";
 import React from "react";
 
+// Define the props interface for the EventSlider component
 interface EventSliderProps {}
 
+// EventSlider component
 const EventSlider: FC<EventSliderProps> = () => {
+  // Get the current width of the window
   const width = useWidth();
 
+  // Determine the number of slides to show based on the window width
   const numbersOfSlides = width <= 1028 ? 1 : 3;
 
+  // Function to render the slides
   const renderSlides = () =>
     events.map((val, index) => (
       <SwiperSlide key={index} className="relative">
@@ -36,6 +41,7 @@ const EventSlider: FC<EventSliderProps> = () => {
 
   return (
     <>
+      {/* Swiper for mobile view */}
       <div className="flex lg:hidden w-full h-full">
         <Swiper
           slidesPerView={numbersOfSlides}
@@ -54,6 +60,7 @@ const EventSlider: FC<EventSliderProps> = () => {
           {renderSlides()}
         </Swiper>
       </div>
+      {/* Swiper for desktop view */}
       <div className="hidden lg:flex w-full h-full">
         <Swiper
           slidesPerView={numbersOfSlides}
@@ -79,13 +86,18 @@ const EventSlider: FC<EventSliderProps> = () => {
 
 export default EventSlider;
 
+// Custom hook to get the current width of the window
 const useWidth = () => {
   const [width, setWidth] = useState(0);
+
+  // Function to handle window resize
   const handleResize = () => setWidth(window.innerWidth);
+
   useEffect(() => {
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
   return width;
 };

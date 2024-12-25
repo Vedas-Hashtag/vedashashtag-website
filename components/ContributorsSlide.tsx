@@ -17,14 +17,19 @@ import "swiper/css/scrollbar";
 import React from "react";
 import { Contributor, ContributorCard } from "./Contributors";
 
+// Define the props for the ContributorSlider component
 interface ContributorSliderProps {
   contributor?: Contributor[];
 }
 
+// Main component to render the contributor slider
 const ContributorSlider: FC<ContributorSliderProps> = ({ contributor }) => {
+  // Get the current width of the window
   const width = useWidth();
+  // Determine the number of slides to show based on the window width
   const numbersOfSlides = width <= 768 ? 1 : width <= 1028 ? 3 : 5;
 
+  // Function to render the Swiper component
   const renderSwiper = (isMobile: boolean) => (
     <Swiper
       slidesPerView={numbersOfSlides}
@@ -52,6 +57,7 @@ const ContributorSlider: FC<ContributorSliderProps> = ({ contributor }) => {
     </Swiper>
   );
 
+  // Render the Swiper component for mobile and desktop views
   return (
     <>
       <div className="flex lg:hidden w-full h-full">{renderSwiper(true)}</div>
@@ -62,13 +68,18 @@ const ContributorSlider: FC<ContributorSliderProps> = ({ contributor }) => {
 
 export default ContributorSlider;
 
+// Custom hook to get the current window width
 const useWidth = () => {
   const [width, setWidth] = useState(0);
+
+  // Function to handle window resize and update the width state
   const handleResize = () => setWidth(window.innerWidth);
+
   useEffect(() => {
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
   return width;
 };

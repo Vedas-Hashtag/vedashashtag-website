@@ -9,6 +9,15 @@ import Image from "next/image";
 import { SectionDescription, SectionTitle } from "./Holder";
 interface HackthonHypeProps {}
 
+/**
+ * `HackthonHype` is a functional component that renders a section promoting the Vedas Hackathon event.
+ * It includes a title, description, and a link to learn more about the event.
+ * The component also displays two background images for visual enhancement.
+ *
+ * @component
+ * @param {HackthonHypeProps} props - The props for the component.
+ * @returns {JSX.Element} The rendered component.
+ */
 const HackthonHype: FC<HackthonHypeProps> = ({}) => {
   return (
     <div className="md:h-[22rem] h-[16rem] bg-primary md:p-16 p-8 relative overflow-hidden">

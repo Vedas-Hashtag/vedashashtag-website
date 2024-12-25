@@ -19,6 +19,25 @@ interface ContributorsListProps {
   error?: string | null;
 }
 
+/**
+ * Component to display a card with contributor information.
+ *
+ * @param {Object} props - The properties object.
+ * @param {Contributor} props.contributor - The contributor object containing details to display.
+ * @returns {JSX.Element} A card component displaying contributor's avatar, login, contributions, and social links.
+ *
+ * @component
+ * @example
+ * const contributor = {
+ *   avatar_url: 'https://example.com/avatar.jpg',
+ *   login: 'username',
+ *   contributions: 42,
+ *   html_url: 'https://github.com/username',
+ *   twitter_url: 'https://twitter.com/username',
+ *   website_url: 'https://example.com'
+ * };
+ * return <ContributorCard contributor={contributor} />;
+ */
 export const ContributorCard = ({
   contributor,
 }: {
