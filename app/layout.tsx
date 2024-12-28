@@ -31,14 +31,14 @@ export const metadata: Metadata = {
       "Home | Vedas Hashtag - Join the Community of Vedas College Students",
     description:
       "Welcome to Vedas Hashtag, the home page for the vibrant community of students from Vedas College. Join us today and be part of the organizing committee for every event at Vedas College.",
-    url: "https://www.vedashashtag.com",
+    url: "https://www.hashtag.vedascollege.edu.np",
     type: "website",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "<generated>",
         width: 1200,
         height: 630,
-        alt: "Vedas Hashtag",
+        alt: "Vedas College",
       },
     ],
   },
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
       "Home | Vedas Hashtag - Join the Community of Vedas College Students",
     description:
       "Welcome to Vedas Hashtag, the home page for the vibrant community of students from Vedas College. Join us today and be part of the organizing committee for every event at Vedas College.",
-    images: ["/images/twitter-image.jpg"],
+    images: ["<generated>"],
   },
   icons: {
     icon: "/favicon.ico",
@@ -81,6 +81,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        {/* <meta name="favicon" content="/favicon.ico" /> */}
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${pixel.variable} antialiased`}
       >
