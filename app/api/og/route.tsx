@@ -46,7 +46,7 @@ export async function GET() {
         </div>
       )
     );
-  } catch (e) {
+  } catch {
     return new Response("Unable to generate a image", { status: 500 });
   }
 }
