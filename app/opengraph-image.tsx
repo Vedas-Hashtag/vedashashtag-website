@@ -1,5 +1,4 @@
 import { ImageResponse } from "next/og";
-import puppeteer from "puppeteer";
 
 export const runtime = "edge";
 
