@@ -24,7 +24,7 @@ const geistMono = Geist_Mono({
 
 const baseUrl =
   process.env.NODE_ENV === "production"
-    ? "https://www.hashtag.vedascollege.edu.np"
+    ? process.env.NEXT_PUBLIC_BASE_URL
     : "http://localhost:3000";
 
 export const metadata: Metadata = {
