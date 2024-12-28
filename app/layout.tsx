@@ -22,6 +22,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://www.hashtag.vedascollege.edu.np"
+    : "http://localhost:3000";
+
 export const metadata: Metadata = {
   title: "Home | Vedas Hashtag - Join the Community of Vedas College Students",
   description:
@@ -35,7 +40,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "<generated>",
+        url: `${baseUrl}/api/og`,
         width: 1200,
         height: 630,
         alt: "Vedas College",
@@ -49,7 +54,7 @@ export const metadata: Metadata = {
       "Home | Vedas Hashtag - Join the Community of Vedas College Students",
     description:
       "Welcome to Vedas Hashtag, the home page for the vibrant community of students from Vedas College. Join us today and be part of the organizing committee for every event at Vedas College.",
-    images: ["<generated>"],
+    images: [baseUrl + "/api/og"],
   },
   icons: {
     icon: "/favicon.ico",
