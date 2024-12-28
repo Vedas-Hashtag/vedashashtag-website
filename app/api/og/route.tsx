@@ -6,7 +6,7 @@ export async function GET() {
   // Determine the base URL based on the environment
   const baseUrl =
     process.env.NODE_ENV === "production"
-      ? "https://www.hashtag.vedascollege.edu.np"
+      ? process.env.NEXT_PUBLIC_BASE_URL
       : "http://localhost:3000";
   try {
     // Create a dynamic Open Graph image response
