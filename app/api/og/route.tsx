@@ -2,14 +2,6 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge"; // Use Edge runtime for better performance
 
-// Metadata for the image
-export const alt = "Vedas College";
-export const size = {
-  width: 1200,
-  height: 630,
-};
-export const contentType = "image/png";
-
 export async function GET() {
   // Determine the base URL based on the environment
   const baseUrl =
