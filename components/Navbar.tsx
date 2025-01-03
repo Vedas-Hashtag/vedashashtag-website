@@ -81,6 +81,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
                       )}
                       title={link.name}
                       aria-label={link.name}
+                      {...(link.props?.target && link.props?.rel && link.props)}
                     >
                       {link.name}
                     </Link>
